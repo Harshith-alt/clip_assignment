@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+There is an AI tool available on the Figma where we need to give the link and it provides the prototype. It can be used for the prototype generation. 
+The plugin tool is **html.to.design** and it can generate the prototype. The other idea which I have is developed below.
+I have also developed a full stack web application app with below idea explained:
+1. Project Overview
+Objective
+Developing a tool that:
+1.	Takes a webpage URL as input.
+2.	Captures a full-page screenshot using Puppeteer.
+3.	Converts it into an editable Figma prototype via Figma’s REST API.
+Use Cases
+•	Rapid prototyping from live websites.
+•	UX analysis of existing web pages.
+2. Technical Architecture
+https://github.com/user-attachments/assets/19307401-c651-44c2-8158-2191aa471622
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
+4. Implementation Details
+3.1 Backend (Node.js)
+Key Files:
+•	index.js – Main server (Express + Puppeteer + Figma API integration).
+•	.env – Stores FIGMA_ACCESS_TOKEN.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Endpoints:
+Endpoint	Method	Description
+/convert	POST	Accepts URL, returns Figma file link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3.2 Frontend (React)
+Components:
+•	App.js – Form input, error handling, result display.
+4. Setup Guide
+4.1 Prerequisites
+•	Node.js ≥ v18
+•	Figma account with API access 
+4.2 Installation
+Backend:
+bash
+npm install express puppeteer axios cors dotenv
+Frontend:
+bash
+npm install react axios
+4.3 Environment Variables
+plaintext
+# .env (Backend)
+FIGMA_ACCESS_TOKEN="your_token_here"
+PORT=5000
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+5. Testing & Debugging
+Test Cases:
+1.	Valid URL: https://example.com → Returns Figma link.
+2.	Invalid URL: example.com → Shows error.
+3.	Figma API Failure: Invalid token → Logs 401 error.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
