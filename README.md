@@ -13,14 +13,12 @@ Use Cases
 2. Technical Architecture
 https://github.com/user-attachments/assets/19307401-c651-44c2-8158-2191aa471622
 
+3. Implementation Details
  
-4. Implementation Details
 3.1 Backend (Node.js)
 Key Files:
 •	index.js – Main server (Express + Puppeteer + Figma API integration).
 •	.env – Stores FIGMA_ACCESS_TOKEN.
-
-
 
 Endpoints:
 Endpoint	Method	Description
@@ -29,10 +27,13 @@ Endpoint	Method	Description
 3.2 Frontend (React)
 Components:
 •	App.js – Form input, error handling, result display.
+
 4. Setup Guide
+   
 4.1 Prerequisites
 •	Node.js ≥ v18
-•	Figma account with API access 
+•	Figma account with API access
+
 4.2 Installation
 Backend:
 bash
@@ -40,12 +41,12 @@ npm install express puppeteer axios cors dotenv
 Frontend:
 bash
 npm install react axios
+
 4.3 Environment Variables
 plaintext
 # .env (Backend)
 FIGMA_ACCESS_TOKEN="your_token_here"
 PORT=5000
-
 
 5. Testing & Debugging
 Test Cases:
